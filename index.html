@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculators</title>
+</head>
+
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    .hero{
+        text-align: center;
+        font-size: 1em;
+        padding: 20px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+    }
+    .inputfield{
+        margin: 20px 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+        font-family: monospace;
+    }
+    .btn{
+        margin: 20px 0;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        font-size: 1em;
+        font-family: monospace;
+    }
+    .output{
+        font-size: 1.5em;
+        font-family: monospace;
+        margin-top: 20px;
+        display: block;
+        color: blue;
+
+    }
+</style>
+
+
+
+
+
+
+<body>
+    
+
+    <h3 class="hero" >Area of a Circle Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Radius" id="radius">
+    <button class="btn" onclick="calculateCircle()" >Calculate</button>
+    <h4 class="output" >Result: <span id="showResult" > </span></h4>
+    
+    <h3 class="hero">Area of a Triangle Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Base" id="triangleBase">
+    <input class="inputfield" type="number" placeholder="Height" id="triangleHeight">
+    <button class="btn" onclick="calculateTriangle()">Calculate</button>
+    <h4 class="output">Result: <span id="triangleResult"></span></h4>
+
+    <h3 class="hero">Area of a Square Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Side Length" id="squareSide">
+    <button class="btn" onclick="calculateSquare()">Calculate</button>
+    <h4 class="output">Result: <span id="squareResult"></span></h4>
+
+    <h3 class="hero">Area of a Quadrilateral Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Side 1" id="quadSide1">
+    <input class="inputfield" type="number" placeholder="Side 2" id="quadSide2">
+    <button class="btn" onclick="calculateQuadrilateral()">Calculate</button>
+    <h4 class="output">Result: <span id="quadResult"></span></h4>
+
+    <h3 class="hero">Area of a Rhombus Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Diagonal 1" id="rhombusDiag1">
+    <input class="inputfield" type="number" placeholder="Diagonal 2" id="rhombusDiag2">
+    <button class="btn" onclick="calculateRhombus()">Calculate</button>
+    <h4 class="output">Result: <span id="rhombusResult"></span></h4>
+
+    <h3 class="hero">Area of a Trapezium Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Base 1" id="trapBase1">
+    <input class="inputfield" type="number" placeholder="Base 2" id="trapBase2">
+    <input class="inputfield" type="number" placeholder="Height" id="trapHeight">
+    <button class="btn" onclick="calculateTrapezium()">Calculate</button>
+    <h4 class="output">Result: <span id="trapResult"></span></h4>
+
+    <h3 class="hero">Area of a Parallelogram Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Base" id="paraBase">
+    <input class="inputfield" type="number" placeholder="Height" id="paraHeight">
+    <button class="btn" onclick="calculateParallelogram()">Calculate</button>
+    <h4 class="output">Result: <span id="paraResult"></span></h4>
+
+    <h3 class="hero">BMI Calculator</h3>
+    <input class="inputfield" type="number" placeholder="Weight (kg)" id="weight">
+    <input class="inputfield" type="number" placeholder="Height (m)" id="height">
+    <button class="btn" onclick="calculateBMI()">Calculate</button>
+    <h4 class="output">Result: <span id="bmiResult"></span></h4>
+
+
+
+    
+
+
+
+   
+
+
+
+
+    <script>
+        function calculateCircle(){
+            let rad = Number(radius.value)
+            const pi =3.142
+    
+            let result = pi * (rad **2)
+            showResult.innerHTML = result + "cm²"
+        }
+
+        function calculateTriangle() {
+            const base = Number(document.getElementById("triangleBase").value);
+            const height = Number(document.getElementById("triangleHeight").value);
+            const area = 0.5 * base * height;
+            document.getElementById("triangleResult").innerHTML = area + " cm²";
+        }
+
+        function calculateSquare() {
+            const side = Number(document.getElementById("squareSide").value);
+            const area = side * side;
+            document.getElementById("squareResult").innerHTML = area + " cm²";
+        }
+
+        function calculateQuadrilateral() {
+            const side1 = Number(document.getElementById("quadSide1").value);
+            const side2 = Number(document.getElementById("quadSide2").value);
+            const area = side1 * side2;
+            document.getElementById("quadResult").innerHTML = area + " cm²";
+        }
+
+        function calculateRhombus() {
+            const diag1 = Number(document.getElementById("rhombusDiag1").value);
+            const diag2 = Number(document.getElementById("rhombusDiag2").value);
+            const area = 0.5 * diag1 * diag2;
+            document.getElementById("rhombusResult").innerHTML = area + " cm²";
+        }
+
+        function calculateTrapezium() {
+            const base1 = Number(document.getElementById("trapBase1").value);
+            const base2 = Number(document.getElementById("trapBase2").value);
+            const height = Number(document.getElementById("trapHeight").value);
+            const area = 0.5 * (base1 + base2) * height;
+            document.getElementById("trapResult").innerHTML = area + " cm²";
+        }
+
+        function calculateParallelogram() {
+            const base = Number(document.getElementById("paraBase").value);
+            const height = Number(document.getElementById("paraHeight").value);
+            const area = base * height;
+            document.getElementById("paraResult").innerHTML = area + " cm²";
+        }
+
+        function calculateBMI() {
+            const weight = Number(document.getElementById("weight").value);
+            const height = Number(document.getElementById("height").value);
+            const bmi = weight / (height ** 2);
+            document.getElementById("bmiResult").innerHTML = bmi.toFixed(2);
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
